@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Welcome to Django Bookmarks{% endblock %}
+{% block head %}Welcome to Django Bookmarks{% endblock %}
+{% block content %}
+  {% if user.username %}
+    <p class="text-center alert alert-success"><strong>Welcome {{ user.username }}!
+      Here you can store and share bookmarks!</strong></p>
+  {% else %}
+
+    <p class="text-center alert alert-info">
+      Welcome anonymous user!You need to <strong><a href="/login">Login</a></strong> before you can store and share bookmarks.</p>
+  {% endif %}
+    <br />
+    <hr />
+  <h2>Bookmarks Shared by Users </h2>
+  {% include 'shared_bookmark_list.html' %}
+<!--
+    <hr />
+    <br />
+    <br />
+    <br />
+<div class="text-center">
+  <address>
+    <strong>Twitter, Inc.</strong><br>
+    795 Folsom Ave, Suite 600<br>
+    San Francisco, CA 94107<br>
+    <abbr title="Phone">P:</abbr> (123) 456-7890
+  </address>
+   
+  <address>
+    <strong>Full Name</strong><br>
+    <a href="mailto:#">first.last@example.com</a>
+  </address>
+</div>
+<hr />
+-->
+{% endblock %}
